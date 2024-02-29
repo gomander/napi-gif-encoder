@@ -2,7 +2,7 @@
 authors = ["Tyrone Trevorrow <tyrone@sudeium.com>"]
 edition = "2018"
 name = "napi-gif-encoder"
-version = "0.0.1"
+version = "0.0.2"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -10,20 +10,20 @@ version = "0.0.1"
 crate-type = ["cdylib"]
 
 [dependencies]
-napi = "1.2.0"
-napi-derive = "1.0.0"
-gif = "0.11.1"
-engiffen = "0.8.1"
-thiserror = "1.0"
+napi = "^1.8.0"
+napi-derive = "^1.1.2"
+gif = "~0.12.0"
+engiffen = "~0.8.1"
+thiserror = "^1.0.57"
 
 [target.'cfg(all(unix, not(target_env = "musl"), not(target_arch = "aarch64")))'.dependencies]
-jemallocator = {version = "0.3", features = ["disable_initial_exec_tls"]}
+jemallocator = {version = "~0.5.4", features = ["disable_initial_exec_tls"]}
 
 [target.'cfg(all(windows, target_arch = "x86_64"))'.dependencies]
-mimalloc = {version = "0.1"}
+mimalloc = {version = "~0.1.39"}
 
 [build-dependencies]
-napi-build = "1.0.0"
+napi-build = "^2.1.2"
 
 [profile.release]
 codegen-units = 1
