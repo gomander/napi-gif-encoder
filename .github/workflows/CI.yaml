@@ -75,7 +75,7 @@ jobs:
           MACOSX_DEPLOYMENT_TARGET: '10.13'
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: bindings-${{ matrix.os }}
           path: ${{ env.APP_NAME }}.*.node
@@ -137,7 +137,7 @@ jobs:
           docker run --rm -v ~/.cargo/git:/root/.cargo/git -v ~/.cargo/registry:/root/.cargo/registry -v $(pwd):/${{ env.APP_NAME }} -e DEBUG="napi:*" -w /${{ env.APP_NAME }} builder sh -c "yarn build"
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: bindings-linux-musl
           path: ${{ env.APP_NAME }}.*.node
@@ -201,7 +201,7 @@ jobs:
         run: yarn build --target armv7-unknown-linux-gnueabihf
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: bindings-linux-arm7
           path: ${{ env.APP_NAME }}.*.node
@@ -265,7 +265,7 @@ jobs:
         run: yarn build --target aarch64-unknown-linux-gnu
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: bindings-linux-aarch64
           path: ${{ env.APP_NAME }}.*.node
@@ -322,7 +322,7 @@ jobs:
         run: yarn build --target aarch64-apple-darwin
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: bindings-apple-aarch64
           path: ${{ env.APP_NAME }}.*.node
@@ -374,7 +374,7 @@ jobs:
           yarn build --target aarch64-linux-android
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: bindings-android-aarch64
           path: ${{ env.APP_NAME }}.*.node
@@ -407,7 +407,7 @@ jobs:
         run: yarn install --frozen-lockfile --registry https://registry.npmjs.org --network-timeout 300000
 
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: bindings-${{ matrix.os }}
           path: .
@@ -481,7 +481,7 @@ jobs:
         run: yarn install --frozen-lockfile --registry https://registry.npmjs.org --network-timeout 300000
 
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: bindings-linux-aarch64
           path: .
@@ -545,7 +545,7 @@ jobs:
         run: yarn install --frozen-lockfile --registry https://registry.npmjs.org --network-timeout 300000
 
       - name: Download all artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           path: artifacts
 
