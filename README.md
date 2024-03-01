@@ -23,9 +23,9 @@ yarn add @tyrone-sudeium/napi-gif-encoder
 Theoretically, any version of Node.js that supports N-API should work. The CI
 is validated against LTS versions of Node:
 
-| Node 12 | Node14 |
-| ------- | ------ |
-| ✓       | ✓      |
+| Node 20 |
+| ------- |
+| ✓       |
 
 ### Building
 
@@ -36,7 +36,7 @@ or submit a PR, read below.
 ## Developing
 
 - Install latest `Rust`. Suggest using [rustup](https://rustup.rs/).
-- Install `NodeJS@10+`. LTS versions suggested. Any version supporting `N-API` should work.
+- Install `NodeJS@20+`. LTS versions suggested. Any version supporting `N-API` should work.
 - Install `yarn@1.x`.
 
 You can then compile the rust code with:
