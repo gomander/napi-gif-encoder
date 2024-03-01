@@ -34,10 +34,10 @@ pub fn create_js_class(env: &Env) -> Result<JsFunction> {
         "GIFEncoder",
         encoder_constructor,
         &[
-            Property::new(&env, "addFrame")?.with_method(add_frame),
-            Property::new(&env, "setFrameRate")?.with_method(set_framerate),
-            Property::new(&env, "setSampleFactor")?.with_method(set_sample_factor),
-            Property::new(&env, "finish")?.with_method(finish),
+            Property::new(env, "addFrame")?.with_method(add_frame),
+            Property::new(env, "setFrameRate")?.with_method(set_framerate),
+            Property::new(env, "setSampleFactor")?.with_method(set_sample_factor),
+            Property::new(env, "finish")?.with_method(finish),
         ],
     )
 }

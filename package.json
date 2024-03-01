@@ -1,23 +1,12 @@
 {
-  "name": "@tyrone-sudeium/napi-gif-encoder",
+  "name": "@gomander/napi-gif-encoder",
   "version": "0.0.1",
   "description": "GIF Encoder for Node JS that tries to have reasonable performance",
   "main": "index.js",
-  "repository": "git@github.com:tyrone-sudeium/napi-gif-encoder.git",
+  "repository": "git@github.com:gomander/napi-gif-encoder.git",
   "license": "MIT",
-  "keywords": [
-    "napi-rs",
-    "NAPI",
-    "N-API",
-    "Rust",
-    "node-addon",
-    "node-addon-api",
-    "gif"
-  ],
-  "files": [
-    "index.d.ts",
-    "index.js"
-  ],
+  "keywords": ["napi-rs", "NAPI", "N-API", "Rust", "node-addon", "node-addon-api", "gif"],
+  "files": ["index.d.ts", "index.js"],
   "napi": {
     "name": "napi-gif-encoder",
     "triples": {
@@ -78,27 +67,14 @@
     "@node-rs/helper": "^1.5.0"
   },
   "lint-staged": {
-    "*.@(js|ts|tsx)": [
-      "prettier --write",
-      "eslint -c .eslintrc.yml --fix"
-    ],
-    "*.@(yml|yaml)": [
-      "prettier --parser yaml --write"
-    ],
-    "*.md": [
-      "prettier --parser markdown --write"
-    ],
-    "*.json": [
-      "prettier --parser json --write"
-    ]
+    "*.@(js|ts|tsx)": ["prettier --write", "eslint -c .eslintrc.yml --fix"],
+    "*.@(yml|yaml)": ["prettier --parser yaml --write"],
+    "*.md": ["prettier --parser markdown --write"],
+    "*.json": ["prettier --parser json --write"]
   },
   "ava": {
-    "require": [
-      "ts-node/register/transpile-only"
-    ],
-    "extensions": [
-      "ts"
-    ],
+    "require": ["ts-node/register/transpile-only"],
+    "extensions": ["ts"],
     "environmentVariables": {
       "TS_NODE_PROJECT": "./tsconfig.json"
     }
