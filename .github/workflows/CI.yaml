@@ -55,14 +55,14 @@ jobs:
           path: node_modules
           key: npm-cache-${{ matrix.os }}-node@20-${{ hashFiles('yarn.lock') }}
 
-      - name: 'Install dependencies'
+      - name: Install dependencies
         run: yarn install --frozen-lockfile --registry https://registry.npmjs.org --network-timeout 300000
 
-      - name: 'Build'
+      - name: Build
         if: matrix.os != 'macos-latest'
         run: yarn build
 
-      - name: 'Build'
+      - name: Build
         if: matrix.os == 'macos-latest'
         run: yarn build
         env:
@@ -121,10 +121,10 @@ jobs:
           path: node_modules
           key: npm-cache-alpine-node@20-${{ hashFiles('yarn.lock') }}
 
-      - name: 'Install dependencies'
+      - name: Install dependencies
         run: yarn install --frozen-lockfile --registry https://registry.npmjs.org --network-timeout 300000
 
-      - name: 'Build'
+      - name: Build
         run: |
           docker run --rm -v ~/.cargo/git:/root/.cargo/git -v ~/.cargo/registry:/root/.cargo/registry -v $(pwd):/${{ env.APP_NAME }} -e DEBUG="napi:*" -w /${{ env.APP_NAME }} builder sh -c "yarn build"
 
@@ -148,7 +148,7 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install
+      - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
 
       - name: Generate Cargo.lock
@@ -206,7 +206,7 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install
+      - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
 
       - name: Install aarch64 toolchain
@@ -262,7 +262,7 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install
+      - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@nightly
 
       - name: Install aarch64 toolchain
@@ -375,7 +375,7 @@ jobs:
           path: node_modules
           key: npm-cache-test-${{ matrix.os }}-node@20-${{ hashFiles('yarn.lock') }}
 
-      - name: 'Install dependencies'
+      - name: Install dependencies
         run: yarn install --frozen-lockfile --registry https://registry.npmjs.org --network-timeout 300000
 
       - name: Download artifacts
@@ -408,7 +408,7 @@ jobs:
           path: node_modules
           key: npm-cache-alpine-node@20-${{ hashFiles('yarn.lock') }}
 
-      - name: 'Install dependencies'
+      - name: Install dependencies
         run: yarn install --frozen-lockfile --ignore-scripts --registry https://registry.npmjs.org
 
       - name: Download artifacts
@@ -449,7 +449,7 @@ jobs:
           path: node_modules
           key: npm-cache-test-linux-aarch64-gnu-node@20-${{ hashFiles('yarn.lock') }}
 
-      - name: 'Install dependencies'
+      - name: Install dependencies
         run: yarn install --frozen-lockfile --registry https://registry.npmjs.org --network-timeout 300000
 
       - name: Download artifacts
@@ -513,7 +513,7 @@ jobs:
           path: node_modules
           key: npm-cache-publish-ubuntu-latest-${{ hashFiles('yarn.lock') }}
 
-      - name: 'Install dependencies'
+      - name: Install dependencies
         run: yarn install --frozen-lockfile --registry https://registry.npmjs.org --network-timeout 300000
 
       - name: Download all artifacts
