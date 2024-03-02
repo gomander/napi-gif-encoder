@@ -1,6 +1,6 @@
 [package]
 authors = ["Tyrone Trevorrow <tyrone@sudeium.com>", "Gunnar Omander <gunnar@gomander.dev>"]
-edition = "2018"
+edition = "2021"
 name = "gomander-napi-gif-encoder"
 version = "0.0.2"
 

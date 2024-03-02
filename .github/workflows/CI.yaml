@@ -4,13 +4,13 @@ env:
   DEBUG: 'napi:*'
   APP_NAME: 'napi-gif-encoder'
 
-on:
-  push:
-    branches:
-      - main
-    tags-ignore:
-      - '**'
-  pull_request:
+# on:
+#   push:
+#     branches:
+#       - main
+#     tags-ignore:
+#       - '**'
+#   pull_request:
 
 jobs:
   build:

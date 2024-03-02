@@ -6,7 +6,7 @@
   "main": "napi-gif-encoder.darwin-arm64.node",
   "files": ["napi-gif-encoder.darwin-arm64.node"],
   "description": "GIF Encoder for Node JS that tries to have reasonable performance",
-  "keywords": ["napi-rs", "NAPI", "N-API", "Rust", "node-addon", "node-addon-api"],
+  "keywords": ["napi-rs", "NAPI", "N-API", "Rust", "node-addon", "node-addon-api", "gif"],
   "license": "MIT",
   "engines": {
     "node": ">= 20"

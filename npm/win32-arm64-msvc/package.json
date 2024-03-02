@@ -1,10 +1,10 @@
 {
-  "name": "@gomander/napi-gif-encoder-linux-x64-gnu",
+  "name": "@gomander/napi-gif-encoder-win32-arm64-msvc",
   "version": "0.0.1",
-  "os": ["linux"],
-  "cpu": ["x64"],
-  "main": "napi-gif-encoder.linux-x64-gnu.node",
-  "files": ["napi-gif-encoder.linux-x64-gnu.node"],
+  "os": ["win32"],
+  "cpu": ["arm64"],
+  "main": "napi-gif-encoder.win32-arm64-msvc.node",
+  "files": ["napi-gif-encoder.win32-arm64-msvc.node"],
   "description": "GIF Encoder for Node JS that tries to have reasonable performance",
   "keywords": ["napi-rs", "NAPI", "N-API", "Rust", "node-addon", "node-addon-api", "gif"],
   "license": "MIT",
@@ -15,6 +15,5 @@
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
-  "repository": "git@github.com:gomander/napi-gif-encoder.git",
-  "libc": ["glibc"]
+  "repository": "git@github.com:gomander/napi-gif-encoder.git"
 }
