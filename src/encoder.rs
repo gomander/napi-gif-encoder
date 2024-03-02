@@ -34,10 +34,10 @@ pub fn create_js_class(env: &Env) -> Result<JsFunction> {
         "GIFEncoder",
         encoder_constructor,
         &[
-            Property::new(env, "addFrame")?.with_method(add_frame),
-            Property::new(env, "setFrameRate")?.with_method(set_framerate),
-            Property::new(env, "setSampleFactor")?.with_method(set_sample_factor),
-            Property::new(env, "finish")?.with_method(finish),
+            Property::new("addFrame")?.with_method(add_frame),
+            Property::new("setFrameRate")?.with_method(set_framerate),
+            Property::new("setSampleFactor")?.with_method(set_sample_factor),
+            Property::new("finish")?.with_method(finish),
         ],
     )
 }
@@ -52,10 +52,7 @@ enum Error {
 
 impl From<Error> for napi::Error {
     fn from(value: Error) -> Self {
-        Self {
-            status: napi::Status::GenericFailure,
-            reason: value.to_string(),
-        }
+        napi::Error::from_reason(value.to_string())
     }
 }
 
@@ -117,8 +114,8 @@ struct RenderTask {
 }
 
 impl RenderTask {
-    fn release_refs(self, env: Env) -> Result<()> {
-        for imgref in self.images {
+    fn release_refs(&mut self, env: Env) -> Result<()> {
+        for imgref in &mut self.images {
             imgref.unref(env)?;
         }
         Ok(())
@@ -157,12 +154,12 @@ impl Task for RenderTask {
         Ok(())
     }
 
-    fn resolve(self, env: Env, _output: Self::Output) -> Result<Self::JsValue> {
+    fn resolve(&mut self, env: Env, _output: Self::Output) -> Result<Self::JsValue> {
         self.release_refs(env)?;
         env.get_undefined()
     }
 
-    fn reject(self, env: Env, err: napi::Error) -> Result<Self::JsValue> {
+    fn reject(&mut self, env: Env, err: napi::Error) -> Result<Self::JsValue> {
         self.release_refs(env)?;
         Err(err)
     }

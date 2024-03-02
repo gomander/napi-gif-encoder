@@ -10,21 +10,20 @@ version = "0.0.2"
 crate-type = ["cdylib"]
 
 [dependencies]
-# 2.0.0+ breaks several pieces of code in this library, but should be upgraded eventually
-napi = "^1.8.0"
-napi-derive = "^1.1.2"
+napi = "^2"
+napi-derive = "^2"
 gif = "~0.13"
 gomander-engiffen = "~0.8"
-thiserror = "^1.0.57"
+thiserror = "^1"
 
 [target.'cfg(all(unix, not(target_env = "musl"), not(target_arch = "aarch64")))'.dependencies]
-jemallocator = {version = "~0.5.4", features = ["disable_initial_exec_tls"]}
+jemallocator = {version = "~0.5", features = ["disable_initial_exec_tls"]}
 
 [target.'cfg(all(windows, target_arch = "x86_64"))'.dependencies]
-mimalloc = {version = "~0.1.39"}
+mimalloc = {version = "~0.1"}
 
 [build-dependencies]
-napi-build = "^2.1.2"
+napi-build = "^2"
 
 [profile.release]
 codegen-units = 1
