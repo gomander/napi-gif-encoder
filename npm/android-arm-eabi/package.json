@@ -9,7 +9,7 @@
   "keywords": ["napi-rs", "NAPI", "N-API", "Rust", "node-addon", "node-addon-api", "gif"],
   "license": "MIT",
   "engines": {
-    "node": ">= 20"
+    "node": ">= 18"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",

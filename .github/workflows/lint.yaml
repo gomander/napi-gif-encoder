@@ -18,9 +18,9 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: lts
 
-      - name: Install
+      - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
         with:
           components: clippy, rustfmt
@@ -29,9 +29,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: node_modules
-          key: npm-cache-lint-node@20-${{ hashFiles('yarn.lock') }}
+          key: npm-cache-lint-node@lts-${{ hashFiles('yarn.lock') }}
 
-      - name: 'Install dependencies'
+      - name: Install dependencies
         run: yarn install --frozen-lockfile --registry https://registry.npmjs.org --network-timeout 300000
 
       - name: ESLint

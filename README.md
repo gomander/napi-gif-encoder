@@ -28,7 +28,7 @@ is validated against the latest LTS version of Node:
 
 | Node 18 | Node 20 |
 | ------- | ------- |
-| X       | ✓       |
+| ✓       | ✓       |
 
 ### Building
 
@@ -77,5 +77,7 @@ Historical data from the original author also suggests that this library scales 
 ### Todo
 
 - [x] Update dependencies
-- [ ] Fix builds for linux-musl, Android
-- [ ] Support all LTS versions of Node
+- [x] Fix builds for linux-musl, Android
+- [x] Support all LTS versions of Node
+- [ ] Publish package to NPM
+- [ ] Add tests
