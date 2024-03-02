@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Sample for napi-gif-encoder",
   "main": "index.js",
-  "repository": "git@github.com:tyrone-sudeium/napi-gif-encoder.git",
+  "repository": "git@github.com:gomander/napi-gif-encoder.git",
   "author": "Tyrone Trevorrow <tyrone@sudeium.com>",
   "license": "MIT",
   "private": false,

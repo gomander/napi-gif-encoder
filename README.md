@@ -1,13 +1,16 @@
 # `napi-gif-encoder`
 
-![https://github.com/tyrone-sudeium/napi-gif-encoder/actions](https://github.com/tyrone-sudeium/napi-gif-encoder/workflows/CI/badge.svg)
+![https://github.com/gomander/napi-gif-encoder/actions](https://github.com/gomander/napi-gif-encoder/workflows/CI/badge.svg)
 
 > GIF Encoder for Node JS that tries to have reasonable performance.
 
+This library is a fork of [@tyrone-sudeium/napi-gif-encoder](https://github.com/tyrone-sudeium/napi-gif-encoder).  
+I made this fork because the original is not currently being maintained.
+
 ## Install
 
-```
-yarn add @tyrone-sudeium/napi-gif-encoder
+```sh
+yarn add @gomander/napi-gif-encoder
 ```
 
 ## Support matrix
@@ -21,11 +24,11 @@ yarn add @tyrone-sudeium/napi-gif-encoder
 ### NodeJS
 
 Theoretically, any version of Node.js that supports N-API should work. The CI
-is validated against LTS versions of Node:
+is validated against the latest LTS version of Node:
 
-| Node 20 |
-| ------- |
-| ✓       |
+| Node 18 | Node 20 |
+| ------- | ------- |
+| X       | ✓       |
 
 ### Building
 
@@ -35,13 +38,15 @@ or submit a PR, read below.
 
 ## Developing
 
-- Install latest `Rust`. Suggest using [rustup](https://rustup.rs/).
-- Install `NodeJS@20+`. LTS versions suggested. Any version supporting `N-API` should work.
+- Install latest `Rust`. Suggest using [rustup](https://rustup.rs/). If on Windows, use WSL for an easier time.
+- Install `NodeJS@20+`. LTS versions suggested.
 - Install `yarn@1.x`.
 
 You can then compile the rust code with:
 
-    yarn build
+```sh
+yarn build
+```
 
 After `yarn build/npm run build` command, you can see
 `napi-gif-encoder.[darwin|win32|linux].node` file in project root.
@@ -53,15 +58,24 @@ This is the native addon built from [lib.rs](./src/lib.rs).
 - `yarn build`
 - `cd sample`
 - `yarn`
-- `node index.js`
+- `node .`
 
 You'll then see `output.gif`, which was encoded using the rust encoder.
 
+You can compare this to a Node-based GIF encoder by running `node . --js`.
+
 ### Performance
 
-Using a Ryzen 3950X to encode the sample project:
+This data is a ten-run average of the time it took to encode the sample project on a Ryzen 7 7800X3D.  
+Historical data from the original author also suggests that this library scales better with more cores than Node-based GIF encoders.
 
 | Encoder                                                         | Time  |
 | --------------------------------------------------------------- | ----- |
-| [`gif-encoder-2`](https://github.com/benjaminadk/gif-encoder-2) | 787ms |
-| `napi-gif-encoder`                                              | 217ms |
+| [`gif-encoder-2`](https://github.com/benjaminadk/gif-encoder-2) | 692ms |
+| `napi-gif-encoder`                                              | 250ms |
+
+### Todo
+
+- [x] Update dependencies
+- [ ] Fix builds for linux-musl, Android
+- [ ] Support all LTS versions of Node

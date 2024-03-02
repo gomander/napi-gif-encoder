@@ -1,5 +1,5 @@
 {
-  "name": "@tyrone-sudeium/napi-gif-encoder-linux-x64-gnu",
+  "name": "@gomander/napi-gif-encoder-linux-x64-gnu",
   "version": "0.0.1",
   "os": ["linux"],
   "cpu": ["x64"],
@@ -15,5 +15,5 @@
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
-  "repository": "git@github.com:tyrone-sudeium/napi-gif-encoder.git"
+  "repository": "git@github.com:gomander/napi-gif-encoder.git"
 }
