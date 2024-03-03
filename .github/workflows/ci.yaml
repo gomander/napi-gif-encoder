@@ -1,4 +1,4 @@
-name: Single-system CI
+name: CI
 
 on:
   push:
@@ -33,14 +33,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install
+      - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
         with:
           toolchain: stable
           targets: ${{ matrix.targets }}
       - uses: actions/setup-node@v4
         with:
-          node-version: node
+          node-version: lts/*
           cache: yarn
       - name: Install ziglang
         uses: goto-bus-stop/setup-zig@v2
@@ -76,17 +76,17 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           cache: yarn
-      - name: Setup node x86
+      - name: Setup Node x86
         if: matrix.settings.target == 'i686-pc-windows-msvc'
         run: yarn config set supportedArchitectures.cpu "ia32"
         shell: bash
       - name: Install dependencies
         run: yarn install
-      - name: Setup node x86
+      - name: Setup Node x86
         uses: actions/setup-node@v4
         if: matrix.settings.target == 'i686-pc-windows-msvc'
         with:
-          node-version: node
+          node-version: ${{ matrix.node }}
           cache: yarn
           architecture: x86
       - name: Download bindings
@@ -124,7 +124,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: node
+          node-version: lts/*
           cache: yarn
       - name: Install dependencies
         run: yarn install
@@ -159,7 +159,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: node
+          node-version: lts/*
           cache: yarn
       - name: Install dependencies
         run: yarn install --frozen-lockfile --registry https://registry.npmjs.org --network-timeout 300000
