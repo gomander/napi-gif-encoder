@@ -10,7 +10,7 @@ I made this fork because the original is not currently being maintained.
 ## Install
 
 ```sh
-yarn add @gomander/napi-gif-encoder
+npm install @gomander/napi-gif-encoder
 ```
 
 ## Support matrix
@@ -24,7 +24,7 @@ yarn add @gomander/napi-gif-encoder
 ### NodeJS
 
 Theoretically, any version of Node.js that supports N-API should work. The CI
-is validated against the latest LTS version of Node:
+is validated against LTS versions of Node:
 
 | Node 18 | Node 20 |
 | ------- | ------- |
@@ -76,8 +76,4 @@ Historical data from the original author also suggests that this library scales 
 
 ### Todo
 
-- [x] Update dependencies
-- [x] Fix builds for linux-musl, Android
-- [x] Support all LTS versions of Node
-- [ ] Publish package to NPM
 - [ ] Add tests
