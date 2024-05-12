@@ -334,7 +334,8 @@ checksum = "d2fabcfbdc87f4758337ca535fb41a6d701b65693ce38287d856d1674551ec9b"
 [[package]]
 name = "gomander-engiffen"
 version = "0.9.0"
-source = "git+https://github.com/gomander/engiffen#19a0362732f9440d3b93f7125222266abc62bf61"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ce209ede02d0d4eea224d03fbd3fdbc6dcacda3627bf379b7d7da6e8f0aa571e"
 dependencies = [
  "color_quant",
  "fnv",
@@ -349,7 +350,7 @@ dependencies = [
 
 [[package]]
 name = "gomander-napi-gif-encoder"
-version = "0.0.2"
+version = "0.0.3"
 dependencies = [
  "gif",
  "gomander-engiffen",
