@@ -25,6 +25,11 @@ export class GIFEncoder {
    */
   setSampleFactor(factor: number): void
   /**
+   * Sets the number of times the GIF should repeat. Defaults to infinite.
+   * @param count Number of times the GIF should loop after the first playthrough. 0 to play only once.
+   */
+  setRepeat(count: number): void
+  /**
    * Render the GIF and write it to disk. As the most time consuming step,
    * it is asynchronous.
    */

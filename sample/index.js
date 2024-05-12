@@ -2,7 +2,7 @@
 const fs = require('fs')
 const path = require('path')
 const { argv } = require('process')
-const JSGIFEncoder = require('gif-encoder-2')
+const JsGifEncoder = require('gif-encoder-2')
 const { PNG } = require('pngjs')
 const { GIFEncoder } = require('../index')
 
@@ -34,6 +34,7 @@ async function main() {
     const encoder = new GIFEncoder(images[0].width, images[0].height, path.join(__dirname, 'output.gif'))
     encoder.setFrameRate(30)
     encoder.setSampleFactor(2)
+    // encoder.setRepeat(0)
     for (const image of images) {
       encoder.addFrame(image.buffer)
     }
@@ -42,8 +43,8 @@ async function main() {
     await encoder.finish()
     const end = new Date().getTime()
     console.log(`Encode time: ${end - start}ms`)
-  } catch (err) {
-    console.error(`Unexpected error: ${JSON.stringify(err)}`)
+  } catch (error) {
+    console.error(`Unexpected error: ${JSON.stringify(error)}`)
   }
 }
 
@@ -57,10 +58,11 @@ class ContextLike {
   }
 }
 
-async function mainJS() {
+async function mainJs() {
   const images = await loadImages()
-  const gif = new JSGIFEncoder(images[0].width, images[1].height, 'neuquant', true, 46)
+  const gif = new JsGifEncoder(images[0].width, images[1].height, 'neuquant', true, 46)
   gif.setFrameRate(30)
+  gif.setRepeat(1)
   console.log('Encoding with JavaScript GIF encoder')
   const start = new Date().getTime()
   gif.start()
@@ -73,7 +75,7 @@ async function mainJS() {
 }
 
 if (argv.includes('--js')) {
-  mainJS()
+  mainJs()
 } else {
   main()
 }

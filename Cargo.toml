@@ -13,7 +13,7 @@ crate-type = ["cdylib"]
 napi = "^2"
 napi-derive = "^2"
 gif = "~0.13"
-gomander-engiffen = { git = "https://github.com/gomander/engiffen", branch = "next"}
+gomander-engiffen = { git = "https://github.com/gomander/engiffen" }
 thiserror = "^1"
 
 [build-dependencies]

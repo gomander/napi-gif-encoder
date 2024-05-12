@@ -14,7 +14,7 @@ pub struct Encoder {
     sample_factor: u32,
     output_path: String,
     images: Vec<Ref<JsBufferValue>>,
-    loop_count: u16,
+    repeat: Option<u16>,
 }
 
 impl Encoder {
@@ -26,7 +26,7 @@ impl Encoder {
             sample_factor: 10,
             output_path: output_path.to_string(),
             images: Vec::new(),
-            loop_count: 0,
+            repeat: None,
         }
     }
 }
@@ -39,7 +39,7 @@ pub fn create_js_class(env: &Env) -> Result<JsFunction> {
             Property::new("addFrame")?.with_method(add_frame),
             Property::new("setFrameRate")?.with_method(set_framerate),
             Property::new("setSampleFactor")?.with_method(set_sample_factor),
-            Property::new("setLoopCount")?.with_method(set_loop_count),
+            Property::new("setRepeat")?.with_method(set_repeat),
             Property::new("finish")?.with_method(finish),
         ],
     )
@@ -107,14 +107,14 @@ fn set_sample_factor(ctx: CallContext) -> Result<JsUndefined> {
     ctx.env.get_undefined()
 }
 
-// JS function: setLoopCount(count: number)
+// JS function: setRepeat(count: number)
 #[js_function(1)]
-fn set_loop_count(ctx: CallContext) -> Result<JsUndefined> {
+fn set_repeat(ctx: CallContext) -> Result<JsUndefined> {
     let this = ctx.this_unchecked::<JsObject>();
     let encoder = ctx.env.unwrap::<Encoder>(&this)?;
     let count32: u32 = ctx.get::<JsNumber>(0)?.try_into()?;
     let count = u16::try_from(count32).map_err(Error::ArgumentTooLarge)?;
-    encoder.loop_count = count;
+    encoder.repeat = Some(count);
 
     ctx.env.get_undefined()
 }
@@ -126,7 +126,7 @@ struct RenderTask {
     sample_factor: u32,
     output_path: String,
     images: Vec<Ref<JsBufferValue>>,
-    loop_count: u16,
+    repeat: Option<u16>,
 }
 
 impl RenderTask {
@@ -161,7 +161,7 @@ impl Task for RenderTask {
             &imgs,
             self.framerate.into(),
             Quantizer::NeuQuant(self.sample_factor),
-            self.loop_count.into(),
+            self.repeat,
         )
         .map_err(Error::EncoderError)?;
         let mut file = File::create(&self.output_path)?;
@@ -197,7 +197,7 @@ fn finish(ctx: CallContext) -> Result<JsObject> {
         sample_factor: encoder.sample_factor,
         output_path: encoder.output_path.clone(),
         images,
-        loop_count: encoder.loop_count,
+        repeat: encoder.repeat,
     };
     ctx.env
         .spawn(task)
