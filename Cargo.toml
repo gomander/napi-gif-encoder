@@ -13,7 +13,7 @@ crate-type = ["cdylib"]
 napi = "^2"
 napi-derive = "^2"
 gif = "~0.13"
-gomander-engiffen = "~0.9"
+gomander-engiffen = "~0.9.1"
 thiserror = "^1"
 
 [build-dependencies]
