@@ -1,11 +1,11 @@
 {
   "name": "@gomander/napi-gif-encoder-win32-x64-msvc",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "os": ["win32"],
   "cpu": ["x64"],
   "main": "napi-gif-encoder.win32-x64-msvc.node",
   "files": ["napi-gif-encoder.win32-x64-msvc.node"],
-  "description": "GIF Encoder for Node JS that tries to have reasonable performance",
+  "description": "A faster GIF Encoder for Node JS using Rust",
   "keywords": ["napi-rs", "NAPI", "N-API", "Rust", "node-addon", "node-addon-api", "gif"],
   "license": "MIT",
   "engines": {
