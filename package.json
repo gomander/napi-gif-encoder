@@ -3,6 +3,12 @@
   "version": "0.0.3",
   "description": "GIF Encoder for Node JS that tries to have reasonable performance",
   "main": "index.js",
+  "exports": {
+    ".": {
+      "require": "./index.js",
+      "import": "./index.js"
+    }
+  },
   "repository": "git@github.com:gomander/napi-gif-encoder.git",
   "license": "MIT",
   "keywords": ["napi-rs", "NAPI", "N-API", "Rust", "node-addon", "node-addon-api", "gif"],
