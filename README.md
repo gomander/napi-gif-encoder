@@ -17,14 +17,14 @@ npm install @gomander/napi-gif-encoder
 
 ### Operating Systems
 
-| Linux x64/aarch64 | macOS x64/aarch64 | Windows x64 |
-| ----------------- | ----------------- | ----------- |
-| ✓                 | ✓                 | ✓           |
+| Linux x64/aarch64 | Windows x64 |
+| ----------------- | ----------- |
+| ✓                 | ✓           |
 
 ### NodeJS
 
-Theoretically, any version of Node.js that supports N-API should work. The CI
-is validated against LTS versions of Node:
+Theoretically, any version of Node that supports N-API should work. The CI is
+validated against LTS versions of Node:
 
 | Node 18 | Node 20 | Node 22 |
 | ------- | ------- | ------- |
@@ -39,7 +39,7 @@ or submit a PR, read below.
 ## Developing
 
 - Install latest `Rust`. Suggest using [rustup](https://rustup.rs/). If on Windows, use WSL for an easier time.
-- Install `NodeJS@20+`. LTS versions suggested.
+- Install `NodeJS@18+`. LTS versions suggested.
 - Install `yarn@1.x`.
 
 You can then compile the rust code with:
@@ -49,7 +49,7 @@ yarn build
 ```
 
 After `yarn build/npm run build` command, you can see
-`napi-gif-encoder.[darwin|win32|linux].node` file in project root.
+`napi-gif-encoder.[win32|linux].node` file in project root.
 This is the native addon built from [lib.rs](./src/lib.rs).
 
 ## Try out using sample project
