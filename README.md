@@ -2,10 +2,10 @@
 
 ![https://github.com/gomander/napi-gif-encoder/actions](https://github.com/gomander/napi-gif-encoder/workflows/CI/badge.svg)
 
-> GIF Encoder for Node JS that tries to have reasonable performance.
+> A faster GIF Encoder for Node JS using Rust
 
 This library is a fork of [@tyrone-sudeium/napi-gif-encoder](https://github.com/tyrone-sudeium/napi-gif-encoder).  
-I made this fork because the original is not currently being maintained.
+I made this fork because the original is not currently being maintained, and I needed a new feature added.
 
 ## Install
 
@@ -26,9 +26,9 @@ npm install @gomander/napi-gif-encoder
 Theoretically, any version of Node.js that supports N-API should work. The CI
 is validated against LTS versions of Node:
 
-| Node 18 | Node 20 |
-| ------- | ------- |
-| ✓       | ✓       |
+| Node 18 | Node 20 | Node 22 |
+| ------- | ------- | ------- |
+| ✓       | ✓       | ✓       |
 
 ### Building
 
@@ -73,7 +73,3 @@ Historical data from the original author also suggests that this library scales 
 | --------------------------------------------------------------- | ----- |
 | [`gif-encoder-2`](https://github.com/benjaminadk/gif-encoder-2) | 692ms |
 | `napi-gif-encoder`                                              | 250ms |
-
-### Todo
-
-- [ ] Add tests
