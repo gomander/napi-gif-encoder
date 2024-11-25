@@ -350,7 +350,7 @@ dependencies = [
 
 [[package]]
 name = "gomander-napi-gif-encoder"
-version = "0.0.7"
+version = "0.0.8"
 dependencies = [
  "gif",
  "gomander-engiffen",

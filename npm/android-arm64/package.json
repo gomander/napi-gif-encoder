@@ -1,6 +1,6 @@
 {
   "name": "@gomander/napi-gif-encoder-android-arm64",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "os": ["android"],
   "cpu": ["arm64"],
   "main": "napi-gif-encoder.android-arm64.node",

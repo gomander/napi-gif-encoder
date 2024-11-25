@@ -1,6 +1,6 @@
 {
   "name": "napi-gif-encoder-sample",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Sample for napi-gif-encoder",
   "main": "index.js",
   "repository": "git@github.com:gomander/napi-gif-encoder.git",

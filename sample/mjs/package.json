@@ -1,6 +1,6 @@
 {
   "name": "napi-gif-encoder-sample-mjs",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Mjs sample for napi-gif-encoder",
   "type": "module",
   "module": "index.js",

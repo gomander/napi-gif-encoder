@@ -1,6 +1,6 @@
 {
   "name": "@gomander/napi-gif-encoder-linux-x64-musl",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "os": ["linux"],
   "cpu": ["x64"],
   "main": "napi-gif-encoder.linux-x64-musl.node",
