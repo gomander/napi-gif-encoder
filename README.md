@@ -40,7 +40,7 @@ or submit a PR, read below.
 ## Developing
 
 - Install latest `Rust`. Suggest using [rustup](https://rustup.rs/). If on
-Windows, use WSL for an easier time.
+  Windows, use WSL for an easier time.
 - Install `NodeJS@18+`. LTS versions suggested.
 - Install `yarn@1.x`.
 - Install dependencies with `yarn`.
@@ -48,7 +48,7 @@ Windows, use WSL for an easier time.
 You can then compile the rust code with `yarn build`.
 
 After running `yarn build`, you will see a
-`napi-gif-encoder.[win32|linux].node` file in the project root.
+`napi-gif-encoder.<PLATFORM>.node` file in the project root.
 This is the native addon built from [lib.rs](./src/lib.rs).
 
 ## Try out using sample project

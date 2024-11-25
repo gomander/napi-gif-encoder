@@ -1,3 +1,7 @@
 import { loadBinding } from '@node-rs/helper'
 
-export default loadBinding(__dirname, 'napi-gif-encoder', '@gomander/napi-gif-encoder')
+export const { GIFEncoder } = loadBinding(
+  import.meta.dirname,
+  'napi-gif-encoder',
+  '@gomander/napi-gif-encoder'
+)

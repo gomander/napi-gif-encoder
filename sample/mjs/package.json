@@ -1,8 +1,9 @@
 {
-  "name": "napi-gif-encoder-sample",
+  "name": "napi-gif-encoder-sample-mjs",
   "version": "0.0.7",
-  "description": "Sample for napi-gif-encoder",
-  "main": "index.js",
+  "description": "Mjs sample for napi-gif-encoder",
+  "type": "module",
+  "module": "index.js",
   "repository": "git@github.com:gomander/napi-gif-encoder.git",
   "author": "Tyrone Trevorrow <tyrone@sudeium.com>",
   "license": "MIT",
