@@ -1,6 +1,6 @@
 {
   "name": "@gomander/napi-gif-encoder-linux-arm-gnueabihf",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "os": ["linux"],
   "cpu": ["arm"],
   "main": "napi-gif-encoder.linux-arm-gnueabihf.node",

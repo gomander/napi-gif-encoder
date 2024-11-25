@@ -1,15 +1,28 @@
 {
   "name": "@gomander/napi-gif-encoder",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A faster GIF Encoder for Node JS using Rust",
   "main": "index.js",
+  "module": "index.mjs",
+  "types": "index.d.ts",
+  "type": "commonjs",
   "exports": {
     ".": {
-      "require": "./index.js",
-      "import": "./index.js"
+      "require": {
+        "default": "./index.js",
+        "types": "./index.d.ts"
+      },
+      "import": {
+        "default": "./index.mjs",
+        "types": "./index.d.mts"
+      },
+      "default": "./index.js"
     }
   },
-  "repository": "git@github.com:gomander/napi-gif-encoder.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gomander/napi-gif-encoder.git"
+  },
   "license": "MIT",
   "keywords": ["napi-rs", "NAPI", "N-API", "Rust", "node-addon", "node-addon-api", "gif"],
   "files": ["index.d.ts", "index.js"],
