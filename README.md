@@ -5,7 +5,8 @@
 > A faster GIF Encoder for Node JS using Rust
 
 This library is a fork of [@tyrone-sudeium/napi-gif-encoder](https://github.com/tyrone-sudeium/napi-gif-encoder).  
-I made this fork because the original is not currently being maintained, and I needed a new feature added.
+I made this fork because the original is not currently being maintained, and I
+needed a new feature added.
 
 ## Install
 
@@ -38,18 +39,16 @@ or submit a PR, read below.
 
 ## Developing
 
-- Install latest `Rust`. Suggest using [rustup](https://rustup.rs/). If on Windows, use WSL for an easier time.
+- Install latest `Rust`. Suggest using [rustup](https://rustup.rs/). If on
+Windows, use WSL for an easier time.
 - Install `NodeJS@18+`. LTS versions suggested.
 - Install `yarn@1.x`.
+- Install dependencies with `yarn`.
 
-You can then compile the rust code with:
+You can then compile the rust code with `yarn build`.
 
-```sh
-yarn build
-```
-
-After `yarn build/npm run build` command, you can see
-`napi-gif-encoder.[win32|linux].node` file in project root.
+After running `yarn build`, you will see a
+`napi-gif-encoder.[win32|linux].node` file in the project root.
 This is the native addon built from [lib.rs](./src/lib.rs).
 
 ## Try out using sample project
@@ -66,8 +65,10 @@ You can compare this to a Node-based GIF encoder by running `node . --js`.
 
 ### Performance
 
-This data is a ten-run average of the time it took to encode the sample project on a Ryzen 7 7800X3D.  
-Historical data from the original author also suggests that this library scales better with more cores than Node-based GIF encoders.
+This data is a ten-run average of the time it took to encode the sample project
+on a Ryzen 7 7800X3D.  
+Historical data from the original author also suggests that this library scales
+better with more cores than Node-based GIF encoders.
 
 | Encoder                                                         | Time  |
 | --------------------------------------------------------------- | ----- |

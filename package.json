@@ -1,6 +1,6 @@
 {
   "name": "@gomander/napi-gif-encoder",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A faster GIF Encoder for Node JS using Rust",
   "exports": {
     ".": {
