@@ -39,8 +39,8 @@ or submit a PR, read below.
 
 ## Developing
 
-- Install latest `Rust`. Suggest using [rustup](https://rustup.rs/). If on
-  Windows, use WSL for an easier time.
+- Install latest `Rust` using [rustup](https://rustup.rs/). If on Windows, use
+  WSL for an easier time.
 - Install `NodeJS@18+`. LTS versions suggested.
 - Install `yarn@1.x`.
 - Install dependencies with `yarn`.
@@ -73,4 +73,4 @@ better with more cores than Node-based GIF encoders.
 | Encoder                                                         | Time  |
 | --------------------------------------------------------------- | ----- |
 | [`gif-encoder-2`](https://github.com/benjaminadk/gif-encoder-2) | 692ms |
-| `napi-gif-encoder`                                              | 250ms |
+| `@gomander/napi-gif-encoder`                                    | 250ms |
